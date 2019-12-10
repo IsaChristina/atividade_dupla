@@ -16,12 +16,27 @@
 </head>
 <body>
 
-    <div class="dropdown ">
+    <header>
+        <nav>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Cadastrar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/listagem">Listar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 class="centro">Cadastrar</h1>
+
+    <div class="dropdown espacamento">
         <button class="btn btn-secondary dropdown-toggle tamanho" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Pessoa
         </button>
         <div class="dropdown-menu tamanho" aria-labelledby="dropdownMenuButton">
-            <form action="/">
+            <form action="/salvar_pessoa">
                 <div class="form-group">
                     <label for="">Nome</label>
                     <input type="text" class="form-control" name="nome" id="">
@@ -35,12 +50,12 @@
         </div>
     </div>
 
-    <div class="dropdown ">
+    <div class="dropdown espacamento">
         <button class="btn btn-secondary dropdown-toggle tamanho" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Funcionário
         </button>
         <div class="dropdown-menu tamanho" aria-labelledby="dropdownMenuButton">
-            <form action="/">
+            <form action="/salvar_funcionario">
                 <div class="form-group">
                     <label for="">ID Pessoal</label>
                     <input type="text" class="form-control" name="id-pessoal" id="">
@@ -54,12 +69,12 @@
         </div>
     </div>
 
-    <div class="dropdown ">
+    <div class="dropdown espacamento">
         <button class="btn btn-secondary dropdown-toggle tamanho" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Linguagem
         </button>
         <div class="dropdown-menu tamanho" aria-labelledby="dropdownMenuButton">
-            <form action="/">
+            <form action="/salvar_linguagem">
                 <div class="form-group">
                     <label for="">Linguagem</label>
                     <input type="text" class="form-control" name="linguagem" id="">
@@ -69,12 +84,12 @@
         </div>
     </div>
 
-    <div class="dropdown ">
+    <div class="dropdown espacamento">
         <button class="btn btn-secondary dropdown-toggle tamanho" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Equipe
         </button>
         <div class="dropdown-menu tamanho" aria-labelledby="dropdownMenuButton">
-            <form action="/">
+            <form action="/salvar_equipe">
                 <div class="form-group">
                     <label for="">Equipe</label>
                     <input type="text" class="form-control" name="funcionario1" id="" placeholder="ID pessoa">
@@ -86,12 +101,6 @@
             </form>
         </div>
     </div>
-
-
-
-
-
-
 
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
