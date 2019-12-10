@@ -1,6 +1,5 @@
 from dao.conexao import Conexao
 
-
 class Listar(Conexao):
 
     # //////////////////
