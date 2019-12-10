@@ -35,6 +35,11 @@ nav{
     border-color: #E8902C!important;
 }
 
+.btn-info{
+    background: #E8902C!important;
+    border-color: #E8902C!important;
+}
+
 .tamanho{
     width: 100%;
 }
@@ -58,4 +63,11 @@ table{
 
 .dropdown-menu{
     text-align: center!important;
+}
+
+.form-signin{
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
 }

@@ -72,8 +72,7 @@ def salvar_equipe():
 
 @app.route('/editar')
 def editar():
-    if 
-    return render_template('editar.html',)
+    return render_template('editar.html')
 
 @app.route('/editar_funcionario', methods=['POST'])
 def editar_funcionario():
