@@ -53,3 +53,16 @@ class Listar(Conexao):
             lista.append({'Id':i[0], 'Nome':i[1]})
         
         return lista
+
+# //////////////////
+
+    def listagem_pessoal(self, id):
+
+        lista = []
+
+        self.cursor.execute('Select * from Linguagens where Id = ', id)
+
+        for i in self.cursor.fetchall():
+            lista.append({'Id':i[0], 'Nome':i[1]})
+        
+        return lista

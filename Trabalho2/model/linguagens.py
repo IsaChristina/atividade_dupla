@@ -1,4 +1,4 @@
- from dao.conexao import Conexao
+from dao.conexao import Conexao
 
 class Linguagem(Conexao):
 

@@ -70,5 +70,24 @@ def salvar_equipe():
     equipe.cadastrar_db(equipe.get_cadastrar())
     return redirect('/')
 
+@app.route('/editar')
+def editar():
+    if 
+    return render_template('editar.html',)
+
+@app.route('/editar_funcionario', methods=['POST'])
+def editar_funcionario():
+    func = Funcionario_db()
+    pess = Pessoa_db()
+    if 'deletar' in request.args.keys():
+        func.deletar_db(request.form['id_funcionario'])
+        pess.deletar_db(request.form['id_pessoal'])
+    elif 'alterar' in request.form.keys():
+        func.set_editar(request.form['id_funcionario'], request.form['Cargo'], request.form['salario'])
+        func.editar_db(func.get_editar())
+        pess.set_editar(request.form['id_pessoal'], request.form['nome'], request.form['cpf'], request.form['telefone'])
+        pess.editar_db(pess.get_editar())
+
+
 
 app.run(debug=True)

@@ -1,10 +1,10 @@
-<form action="/editar_funcionario_pessoa">
+<form action="/editar_funcionario" method="POST">
 
     <label for="">Id pessoal</label><br>
-    <input type="text" name="" id="" value="{{pessoa['Id_pessoal']}}" readonly>
+    <input type="text" name="id_pessoal" id="" value="{{pessoa['Id_pessoal']}}" readonly>
     <br><br>
     <label for="">Id funcionário</label><br>
-    <input type="text" name="" id="" value="{{pessoa['Id_funcionario']}}" readonly>
+    <input type="text" name="id_funcionario" id="" value="{{pessoa['Id_funcionario']}}" readonly>
     <br><br>
     <label for="id_nome"></label>Nome<br>
     <input type="text" name="nome" id="id_nome" value="{{pessoa['Nome']}}">
@@ -21,8 +21,12 @@
     <label for="id_salario">Salario</label><br>
     <input type="text" name="salario" id="id_salario" value="{{pessoa['salario']}}">
     <br><br>
-    <button type="submit" class="btn-info btn-large btn">Alterar</button>
+    <button type="submit" class="btn-info btn-large btn" name="alterar">Alterar</button>
+    <button type="submit" class="btn-danger btn-large btn" name="deletar">Deletar</button>
 </form>
-<form action="/deletar">
+
+<!-- <form action="/deletar">
+    <input type="text" name="tipo" value="funcionario" style="display: none;">
+    <input type="text" name="id" value="{{request.args['id']}}" style="display: none;">
     <button type="submit" class="btn-danger btn-large btn">Deletar</button>
-</form>
+</form> -->
