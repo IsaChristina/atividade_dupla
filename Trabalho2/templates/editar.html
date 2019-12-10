@@ -31,6 +31,7 @@
 
     <h1 class="centro">Editar</h1>
 
+    {%if 'id_pessoal' in request.args.keys()%}
     <!-- Formulário Funcionário -->
     <form action="/editar_funcionario" method="POST" class="form-signin">
         <label for="">Id Pessoal</label><br>
@@ -51,7 +52,9 @@
         <button type="submit" class="btn-info btn-large btn" name="alterar">Alterar</button>
         <button type="submit" class="btn-danger btn-large btn" name="deletar">Deletar</button>
     </form>
+    {% endif %}
 
+    {%if 'id_linguagem' in request.args.keys()%}
     <!-- Formulário Linguagem -->
     <form action="/editar_linguagem" method="POST" class="form-signin">
         <label for="">Id Linguagem</label><br>
@@ -62,7 +65,9 @@
         <button type="submit" class="btn-info btn-large btn" name="alterar">Alterar</button>
         <button type="submit" class="btn-danger btn-large btn" name="deletar">Deletar</button>
     </form>
+    {% endif %}
 
+    {%if 'id_equipe' in request.args.keys()%}
     <!-- Formulário de Equipe -->
     <form action="/editar_equipe" method="POST" class="form-signin">
         <label for="">Id Equipe</label><br>
@@ -79,5 +84,6 @@
         <button type="submit" class="btn-info btn-large btn" name="alterar">Alterar</button>
         <button type="submit" class="btn-danger btn-large btn" name="deletar">Deletar</button>
     </form>
+    {% endif %}
 </body>
 </html>

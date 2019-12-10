@@ -1,3 +1,5 @@
+import sys
+sys.path.append("C:/Users/900226/Desktop/exercicios/atividade_dupla/Trabalho2/")
 from model.funcionarios import Funcionario
 
 
@@ -28,3 +30,5 @@ class Funcionario_db(Funcionario):
         self.cursor.execute(f"Delete from Funcionarios where Id = {id}")
 
         self.conexao.commit()
+
+        return True

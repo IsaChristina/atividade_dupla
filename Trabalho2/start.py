@@ -1,18 +1,19 @@
 import sys
-sys.path.append("C:/Users/900226/Desktop/exercicios/atividade_dupla/Trabalho2/")
-
-from model.funcionarios import Funcionario
-from model.linguagens import Linguagem
-from model.equipes import Equipe
-from model.pessoas import Pessoa
-
-from dao.dao_equipes import Equipe_db
-from dao.dao_funcionarios import Funcionario_db
-from dao.dao_linguagens import Linguagem_db
-from dao.dao_pessoas import Pessoa_db
-from dao.listar import Listar
+sys.path.append(
+    "C:/Users/900226/Desktop/exercicios/atividade_dupla/Trabalho2/")
 
 from flask import Flask, render_template, redirect, request
+
+from dao.listar import Listar
+from dao.dao_pessoas import Pessoa_db
+from dao.dao_linguagens import Linguagem_db
+from dao.dao_funcionarios import Funcionario_db
+from dao.dao_equipes import Equipe_db
+
+from model.pessoas import Pessoa
+from model.equipes import Equipe
+from model.linguagens import Linguagem
+from model.funcionarios import Funcionario
 
 
 app = Flask(__name__
@@ -44,7 +45,7 @@ def salvar_pessoa():
     telefone = request.args["telefone"]
     pessoa.set_cadastrar(nome, cpf, telefone)
     pessoa.cadastrar_db(pessoa.get_cadastrar())
-    return redirect('/')
+    return redirect('/listagem')
 
 
 @app.route('/salvar_funcionario')
@@ -55,7 +56,7 @@ def salvar_funcionario():
     salario = request.args["salario"]
     funcionario.set_cadastrar(cargo, salario, idpessoal)
     funcionario.cadastrar_db(funcionario.get_cadastrar())
-    return redirect('/')
+    return redirect('/listagem')
 
 
 @app.route('/salvar_linguagem')
@@ -64,7 +65,7 @@ def salvar_linguagem():
     nome = request.args["linguagem"]
     linguagem.set_cadastrar(nome)
     linguagem.cadastrar_db(linguagem.get_cadastrar())
-    return redirect('/')
+    return redirect('/listagem')
 
 
 @app.route('/salvar_equipe')
@@ -77,7 +78,7 @@ def salvar_equipe():
     equipe.set_cadastrar(funcionario1, funcionario2,
                          funcionario3, funcionario4)
     equipe.cadastrar_db(equipe.get_cadastrar())
-    return redirect('/')
+    return redirect('/listagem')
 
 
 @app.route('/editar')
@@ -85,12 +86,12 @@ def editar():
 
     retornar = Listar()
 
-    if 'id_funcionario' in request.args.keys():
-        lista = retornar.funcionario_individual(request.args['id_funcionario'])
+    if 'id_pessoal' in request.args.keys():
+        lista = retornar.funcionario_individual(request.args['id_pessoal'])
     elif 'id_equipe' in request.args.keys():
         lista = retornar.equipe_individual(request.args['id_equipe'])
     elif 'id_linguagem' in request.args.keys():
-        lista = retornar.linguagem_individual(request.args['id_funcionario'])
+        lista = retornar.linguagem_individual(request.args['id_linguagem'])
 
     return render_template('editar.html', pessoa=lista)
 
@@ -99,7 +100,7 @@ def editar():
 def editar_funcionario():
     func = Funcionario_db()
     pess = Pessoa_db()
-    if 'deletar' in request.args.keys():
+    if 'deletar' in request.form.keys():
         func.deletar_db(request.form['id_funcionario'])
         pess.deletar_db(request.form['id_pessoal'])
     elif 'alterar' in request.form.keys():
@@ -110,7 +111,33 @@ def editar_funcionario():
                         request.form['cpf'], request.form['telefone'])
         pess.editar_db(pess.get_editar())
 
-    return redirect('/')
+    return redirect('/listagem')
+
+
+@app.route('/editar_linguagem', methods=['POST'])
+def editar_linguagem():
+    lg = Linguagem_db()
+    if 'deletar' in request.form.keys():
+        lg.deletar_db(request.form['id_linguagem'])
+    elif 'alterar' in request.form.keys():
+        lg.set_editar(request.form['id_linguagem'],
+                      request.form['nome'])
+        lg.editar_db(lg.get_editar())
+
+    return redirect('/listagem')
+
+
+@app.route('/editar_equipe', methods=['POST'])
+def editar_equipe():
+    eq = Equipe_db()
+    if 'deletar' in request.form.keys():
+        eq.deletar_db(request.form['id_equipe'])
+    elif 'alterar' in request.form.keys():
+        eq.set_editar(request.form['id_equipe'],
+                        request.form['id1'], request.form['id2'], request.form['id3'], request.form['id4'])
+        eq.editar_db(eq.get_editar())
+
+    return redirect('/listagem')
 
 
 app.run(debug=True)

@@ -28,3 +28,5 @@ class Pessoa_db(Pessoa):
         self.cursor.execute(f"Delete from Pessoas where Id = {id}")
 
         self.conexao.commit()
+
+        return True

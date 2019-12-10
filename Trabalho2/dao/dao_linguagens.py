@@ -23,6 +23,6 @@ class Linguagem_db(Linguagem):
 
     def deletar_db(self, id):
 
-        self.cursor.execute(f"Delete from Funcionarios where Id = {id}")
+        self.cursor.execute(f"Delete from Linguagens where Id = {id}")
 
         self.conexao.commit()

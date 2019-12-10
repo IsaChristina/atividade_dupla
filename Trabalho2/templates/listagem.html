@@ -50,7 +50,6 @@
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>Telefone</th>
-                        <th>Opção</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,7 +59,6 @@
                         <td>{{p["Nome"]}}</td>
                         <td>{{p["Cpf"]}}</td>
                         <td>{{p["Telefone"]}}</td>
-                        <td><a href="/editar">Editar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -68,6 +66,7 @@
         </div>
     </div>
 
+    
     <!-- Listagem de Funcionários -->
     <div class="dropdown espacamento">
         <button class="btn btn-secondary dropdown-toggle tamanho" type="button" id="dropdownMenuButton"
@@ -92,14 +91,16 @@
                         <td>{{f["Id_pessoal"]}}</td>
                         <td>{{f["Cargo"]}}</td>
                         <td>{{f["Salario"]}}</td>
-                        <td><a href="/editar?id_funcionario={{f['Id']}}">Editar</a></td>
+                        <td><a href="/editar?id_pessoal={{f['Id_pessoal']}}">Editar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
     </div>
+    
 
+    
     <!-- Listagem de  Linguagem -->
     <div class="dropdown espacamento">
         <button class="btn btn-secondary dropdown-toggle tamanho" type="button" id="dropdownMenuButton"
@@ -120,7 +121,7 @@
                     <tr>
                         <td>{{l["Id"]}}</td>
                         <td>{{l["Nome"]}}</td>
-                        <td><a href="/editar">Editar</a></td>
+                        <td><a href="/editar?id_linguagem={{l['Id']}}">Editar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -128,6 +129,7 @@
         </div>
     </div>
 
+    
     <!-- Listagem de Equipes -->
     <div class="dropdown espacamento">
         <button class="btn btn-secondary dropdown-toggle tamanho" type="button" id="dropdownMenuButton"
@@ -154,7 +156,7 @@
                         <td>{{e["Pessoa_2"]}}</td>
                         <td>{{e["Pessoa_3"]}}</td>
                         <td>{{e["Pessoa_4"]}}</td>
-                        <td><a href="/editar">Editar</a></td>
+                        <td><a href="/editar?id_equipe={{e['Id_equipe']}}">Editar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
