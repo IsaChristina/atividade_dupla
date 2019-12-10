@@ -1,3 +1,4 @@
+{{pessoa}}
 <form action="/editar_funcionario" method="POST">
 
     <label for="">Id pessoal</label><br>
@@ -19,14 +20,8 @@
     <input type="text" name="cargo" id="id_cargo" value="{{pessoa['Cargo']}}">
     <br><br>
     <label for="id_salario">Salario</label><br>
-    <input type="text" name="salario" id="id_salario" value="{{pessoa['salario']}}">
+    <input type="text" name="salario" id="id_salario" value="{{pessoa['Salario']}}">
     <br><br>
     <button type="submit" class="btn-info btn-large btn" name="alterar">Alterar</button>
     <button type="submit" class="btn-danger btn-large btn" name="deletar">Deletar</button>
 </form>
-
-<!-- <form action="/deletar">
-    <input type="text" name="tipo" value="funcionario" style="display: none;">
-    <input type="text" name="id" value="{{request.args['id']}}" style="display: none;">
-    <button type="submit" class="btn-danger btn-large btn">Deletar</button>
-</form> -->
