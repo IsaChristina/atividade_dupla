@@ -50,6 +50,7 @@
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>Telefone</th>
+                        <th>Opção</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,6 +60,7 @@
                         <td>{{p["Nome"]}}</td>
                         <td>{{p["Cpf"]}}</td>
                         <td>{{p["Telefone"]}}</td>
+                        <td><a href="/editar">Editar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -80,6 +82,7 @@
                         <th>ID Pessoal</th>
                         <th>Cargo</th>
                         <th>Salário</th>
+                        <th>Opção</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -89,6 +92,7 @@
                         <td>{{f["Id_pessoal"]}}</td>
                         <td>{{f["Cargo"]}}</td>
                         <td>{{f["Salario"]}}</td>
+                        <td><a href="/editar?id_funcionario={{f['Id']}}">Editar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -108,6 +112,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Linguagem</th>
+                        <th>Opção</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -115,6 +120,7 @@
                     <tr>
                         <td>{{l["Id"]}}</td>
                         <td>{{l["Nome"]}}</td>
+                        <td><a href="/editar">Editar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -137,6 +143,7 @@
                         <th>Pessoa 2</th>
                         <th>Pessoa 3</th>
                         <th>Pessoa 4</th>
+                        <th>Opção</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -147,6 +154,7 @@
                         <td>{{e["Pessoa_2"]}}</td>
                         <td>{{e["Pessoa_3"]}}</td>
                         <td>{{e["Pessoa_4"]}}</td>
+                        <td><a href="/editar">Editar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
