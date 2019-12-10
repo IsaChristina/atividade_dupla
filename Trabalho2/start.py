@@ -1,4 +1,3 @@
-<<<<<<< HEAD:Trabalho2/start.py
 import sys
 sys.path.append("C:/Users/900226/Desktop/exercicios/atividade_dupla/Trabalho2/")
 
