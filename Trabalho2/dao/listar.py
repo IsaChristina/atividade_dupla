@@ -1,4 +1,4 @@
-from dao.conexao import Conexao
+from conexao import Conexao
 
 class Listar(Conexao):
 

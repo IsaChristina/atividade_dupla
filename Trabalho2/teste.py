@@ -1,13 +1,6 @@
-from dao.listar import Listar
+import sys
+sys.path.append("C:/Users/900218/Documents/Exercicios/atividade_dupla/Trabalho2/")
 
-teste = Listar()
-lista = teste.listar_pessoas()
-print(lista)
+from model.* import *
 
-# teste = Linguagem_db()
-# teste.set_editar(1, 'Python 3')
-# teste.editar_db(teste.get_editar())
-
-# teste2 = Pessoa_db()
-# teste2.set_cadastrar('Junior', 5468435, 5761418)
-# teste2.cadastrar_db(teste2.get_cadastrar())
+teste = pessoas.Pessoa()
