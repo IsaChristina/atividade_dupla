@@ -104,11 +104,13 @@ def editar_funcionario():
         pess.deletar_db(request.form['id_pessoal'])
     elif 'alterar' in request.form.keys():
         func.set_editar(request.form['id_funcionario'],
-                        request.form['Cargo'], request.form['salario'])
+                        request.form['cargo'], request.form['salario'])
         func.editar_db(func.get_editar())
         pess.set_editar(request.form['id_pessoal'], request.form['nome'],
                         request.form['cpf'], request.form['telefone'])
         pess.editar_db(pess.get_editar())
+
+    return redirect('/')
 
 
 app.run(debug=True)

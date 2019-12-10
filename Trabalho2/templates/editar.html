@@ -46,16 +46,16 @@
         <label for="id_cargo">Cargo</label><br>
         <input type="text" name="cargo" id="id_cargo" class="form-control" value="{{pessoa['Cargo']}}">
         <label for="id_salario">Salario</label><br>
-        <input type="text" name="salario" id="id_salario" class="form-control" value="{{pessoa['salario']}}">
+        <input type="text" name="salario" id="id_salario" class="form-control" value="{{pessoa['Salario']}}">
         <br>
         <button type="submit" class="btn-info btn-large btn" name="alterar">Alterar</button>
         <button type="submit" class="btn-danger btn-large btn" name="deletar">Deletar</button>
     </form>
 
     <!-- Formulário Linguagem -->
-    <form action="/editar_funcionario" method="POST" class="form-signin">
+    <form action="/editar_linguagem" method="POST" class="form-signin">
         <label for="">Id Linguagem</label><br>
-        <input type="text" name="id_linguagem" id="" class="form-control" value="{{pessoa['Id_funcionario']}}" readonly>
+        <input type="text" name="id_linguagem" id="" class="form-control" value="{{pessoa['Id']}}" readonly>
         <label for="id_nome">Nome</label><br>
         <input type="text" name="nome" id="id_nome" class="form-control" value="{{pessoa['Nome']}}">
         <br>
@@ -64,17 +64,17 @@
     </form>
 
     <!-- Formulário de Equipe -->
-    <form action="/editar_funcionario" method="POST" class="form-signin">
+    <form action="/editar_equipe" method="POST" class="form-signin">
         <label for="">Id Equipe</label><br>
-        <input type="text" name="id_equipe" id="" class="form-control" value="{{pessoa['Id_funcionario']}}" readonly>
+        <input type="text" name="id_equipe" id="" class="form-control" value="{{pessoa['Id_equipe']}}" readonly>
         <label for="id_nome">Id 1</label><br>
-        <input type="text" name="id1" id="id_nome" class="form-control" value="{{pessoa['Nome']}}">
+        <input type="text" name="id1" id="id_nome" class="form-control" value="{{pessoa['Pessoa_1']}}">
         <label for="id_cpf">Id 2</label><br>
-        <input type="text" name="id2" id="id_cpf" class="form-control" value="{{pessoa['Cpf']}}">
+        <input type="text" name="id2" id="id_cpf" class="form-control" value="{{pessoa['Pessoa_2']}}">
         <label for="id_cpf">Id 3</label><br>
-        <input type="text" name="id3" id="id_cpf" class="form-control" value="{{pessoa['Cpf']}}">
+        <input type="text" name="id3" id="id_cpf" class="form-control" value="{{pessoa['Pessoa_3']}}">
         <label for="id_cpf">Id 4</label><br>
-        <input type="text" name="id4" id="id_cpf" class="form-control" value="{{pessoa['Cpf']}}">
+        <input type="text" name="id4" id="id_cpf" class="form-control" value="{{pessoa['Pessoa_4']}}">
         <br>
         <button type="submit" class="btn-info btn-large btn" name="alterar">Alterar</button>
         <button type="submit" class="btn-danger btn-large btn" name="deletar">Deletar</button>
