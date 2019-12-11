@@ -4,6 +4,7 @@ from model.pessoas import Pessoa
 class Pessoa_db(Pessoa):
 
 # //////////////////
+# Cadastra no banco de dados
 
     def cadastrar_db(self, pessoa):
 
@@ -13,6 +14,7 @@ class Pessoa_db(Pessoa):
         self.conexao.commit()
 
 # //////////////////
+# Edita a informação no banco de dados
 
     def editar_db(self, pessoa):
 
@@ -22,6 +24,7 @@ class Pessoa_db(Pessoa):
         self.conexao.commit()
 
 # //////////////////
+# Deleta a informação do banco de dados
 
     def deletar_db(self, id):
 

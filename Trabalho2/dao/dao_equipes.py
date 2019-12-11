@@ -4,7 +4,7 @@ from model.equipes import Equipe
 class Equipe_db(Equipe):
 
 # //////////////////
-
+# Cadastra no banco de dados
     def cadastrar_db(self, equipe):
 
         self.cursor.execute(f"Insert into Equipes values (DEFAULT, {equipe['Id_1']}, "
@@ -13,6 +13,7 @@ class Equipe_db(Equipe):
         self.conexao.commit()
 
 # //////////////////
+# Edita a informação no banco de dados
 
     def editar_db(self, equipe):
 
@@ -22,6 +23,7 @@ class Equipe_db(Equipe):
         self.conexao.commit()
 
 # //////////////////
+# Deleta a informação do banco de dados
 
     def deletar_db(self, id):
 

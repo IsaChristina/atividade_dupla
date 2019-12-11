@@ -22,11 +22,12 @@ app = Flask(__name__
             )
 
 
+# Rota de cadastro
 @app.route('/')
 def home():
     return render_template('home.html')
 
-
+# Rota de listagem
 @app.route('/listagem')
 def listagem():
     listar = Listar()
@@ -36,7 +37,7 @@ def listagem():
     lista_linguagem = listar.listar_linguagens()
     return render_template('listagem.html', pessoa=lista_pessoa, funcionario=lista_funcionario, equipe=lista_equipe, linguagem=lista_linguagem)
 
-
+# Rota que cadastra a pessoa
 @app.route('/salvar_pessoa')
 def salvar_pessoa():
     pessoa = Pessoa_db()
@@ -47,7 +48,7 @@ def salvar_pessoa():
     pessoa.cadastrar_db(pessoa.get_cadastrar())
     return redirect('/listagem')
 
-
+# Rota que cadastra o funcionário
 @app.route('/salvar_funcionario')
 def salvar_funcionario():
     funcionario = Funcionario_db()
@@ -58,7 +59,7 @@ def salvar_funcionario():
     funcionario.cadastrar_db(funcionario.get_cadastrar())
     return redirect('/listagem')
 
-
+# Rota que cadastra a linguagem
 @app.route('/salvar_linguagem')
 def salvar_linguagem():
     linguagem = Linguagem_db()
@@ -67,7 +68,7 @@ def salvar_linguagem():
     linguagem.cadastrar_db(linguagem.get_cadastrar())
     return redirect('/listagem')
 
-
+# Rota que cadastra a equipe
 @app.route('/salvar_equipe')
 def salvar_equipe():
     equipe = Equipe_db()
@@ -80,7 +81,7 @@ def salvar_equipe():
     equipe.cadastrar_db(equipe.get_cadastrar())
     return redirect('/listagem')
 
-
+# Rota de edição (individual)
 @app.route('/editar')
 def editar():
 
@@ -95,7 +96,7 @@ def editar():
 
     return render_template('editar.html', pessoa=lista)
 
-
+# Rota que edita ou deleta um funcionario e a pessoa
 @app.route('/editar_funcionario', methods=['POST'])
 def editar_funcionario():
     func = Funcionario_db()
@@ -113,7 +114,7 @@ def editar_funcionario():
 
     return redirect('/listagem')
 
-
+# Rota que edita ou deleta a linguagem
 @app.route('/editar_linguagem', methods=['POST'])
 def editar_linguagem():
     lg = Linguagem_db()
@@ -126,7 +127,7 @@ def editar_linguagem():
 
     return redirect('/listagem')
 
-
+# Rota que edita ou deleta a equipe
 @app.route('/editar_equipe', methods=['POST'])
 def editar_equipe():
     eq = Equipe_db()

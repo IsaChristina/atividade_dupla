@@ -6,6 +6,7 @@ from model.funcionarios import Funcionario
 class Funcionario_db(Funcionario):
 
 # //////////////////
+# Cadastra no banco de dados
 
     def cadastrar_db(self, funcionario):
 
@@ -15,6 +16,7 @@ class Funcionario_db(Funcionario):
         self.conexao.commit()
 
 # //////////////////
+# Edita a informação no banco de dados
 
     def editar_db(self, funcionario):
 
@@ -24,9 +26,14 @@ class Funcionario_db(Funcionario):
         self.conexao.commit()
 
 # //////////////////
+# Deleta a informação do banco de dados
 
     def deletar_db(self, id):
 
+        self.cursor.execute(f'Update Equipes set Pessoa_1 = NULL where Pessoa_1 = {id}')
+        self.cursor.execute(f'Update Equipes set Pessoa_2 = NULL where Pessoa_2 = {id}')
+        self.cursor.execute(f'Update Equipes set Pessoa_3 = NULL where Pessoa_3 = {id}')
+        self.cursor.execute(f'Update Equipes set Pessoa_4 = NULL where Pessoa_4 = {id}')
         self.cursor.execute(f"Delete from Funcionarios where Id = {id}")
 
         self.conexao.commit()

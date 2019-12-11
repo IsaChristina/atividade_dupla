@@ -2,8 +2,8 @@ from dao.conexao import Conexao
 
 class Listar(Conexao):
 
-    # //////////////////
-
+# //////////////////
+# Lista todas as pessoas do banco de dados
     def listar_pessoas(self):
 
         lista = []
@@ -17,6 +17,7 @@ class Listar(Conexao):
         return lista
 
 # //////////////////
+# Lista todos os funcionários do banco de dados
 
     def listar_funcionarios(self):
 
@@ -31,6 +32,7 @@ class Listar(Conexao):
         return lista
 
 # //////////////////
+# Lista todas as equipes do banco de dados
 
     def listar_equipes(self):
 
@@ -45,6 +47,7 @@ class Listar(Conexao):
         return lista
 
 # //////////////////
+# Lista todas as linguagens do banco de dados
 
     def listar_linguagens(self):
 
@@ -58,6 +61,7 @@ class Listar(Conexao):
         return lista
 
 # //////////////////
+# Lista um funcionário e a pessoa específicos
 
     def funcionario_individual(self, id):
 
@@ -72,6 +76,7 @@ class Listar(Conexao):
 
         return {'Id_pessoal': l1[0], 'Nome': l1[1], 'Cpf': l1[2], 'Telefone': l1[3], 'Id_funcionario': l2[0], 'Cargo': l2[1], 'Salario': l2[2]}
 
+# Lista uma equipe específica
     def equipe_individual(self, id):
 
         self.cursor.execute(f'Select * from Equipes where Id = {id}')
@@ -80,6 +85,7 @@ class Listar(Conexao):
 
         return {'Id_equipe': i[0], 'Pessoa_1': i[1], 'Pessoa_2': i[2], 'Pessoa_3': i[3], 'Pessoa_4': i[4]}
 
+# Lista uma linguagem específica
     def linguagem_individual(self, id):
 
         self.cursor.execute(f'Select * from Linguagens where Id = {id}')

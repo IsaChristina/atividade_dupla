@@ -1,6 +1,6 @@
 import MySQLdb
 
-
+#  Inicia a classe de conexão
 class Conexao:
 
     def __init__(self):
