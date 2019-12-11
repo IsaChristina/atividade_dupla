@@ -1,6 +1,6 @@
-import sys
-sys.path.append(
-    "C:/Users/900226/Desktop/exercicios/atividade_dupla/Trabalho2/")
+# import sys
+# sys.path.append(
+#     "C:/Users/900226/Desktop/exercicios/atividade_dupla/Trabalho2/")
 
 from flask import Flask, render_template, redirect, request
 
