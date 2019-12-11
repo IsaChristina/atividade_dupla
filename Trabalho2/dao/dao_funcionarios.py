@@ -19,7 +19,7 @@ class Funcionario_db(Funcionario):
     def editar_db(self, funcionario):
 
         self.cursor.execute(f"Update Funcionarios Set Cargo = '{funcionario['Cargo']}', "
-                            f"Salario = {funcionario['Salario']}")
+                            f"Salario = {funcionario['Salario']} where Id = {funcionario['Id']}")
 
         self.conexao.commit()
 

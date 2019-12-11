@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,16 @@
     <link rel="stylesheet" href="../static/estilo.css">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
     <title>HBSIS - Home</title>
 
 </head>
+
 <body>
 
     <header>
@@ -31,12 +36,13 @@
 
     <h1 class="centro">Cadastrar</h1>
 
-    <div class="dropdown espacamento">
-        <button class="btn btn-secondary dropdown-toggle tamanho" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Pessoa
-        </button>
-        <div class="dropdown-menu tamanho" aria-labelledby="dropdownMenuButton">
-            <form action="/salvar_pessoa">
+    <div class="p-5">
+
+        <div class="drop_down espacamento">
+            <button class="btn btn_c tamanho" onclick="drop_down1()" ondblclick="drop_up1()" type="button">
+                Pessoa
+            </button>
+            <form action="/salvar_pessoa" class="form_dd1">
                 <div class="form-group">
                     <label for="">Nome</label>
                     <input type="text" class="form-control" name="nome" id="">
@@ -44,18 +50,16 @@
                     <input type="text" class="form-control" name="cpf" id="">
                     <label for="">Telefone</label>
                     <input type="text" class="form-control" name="telefone" id="">
-                    <button type="submit" class="btn btn-lg btn-primary btn-block">Cadastrar</button>
+                    <button type="submit" class="btn btn-lg btn-success btn-block mt-3">Cadastrar</button>
                 </div>
             </form>
         </div>
-    </div>
 
-    <div class="dropdown espacamento">
-        <button class="btn btn-secondary dropdown-toggle tamanho" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Funcionário
-        </button>
-        <div class="dropdown-menu tamanho" aria-labelledby="dropdownMenuButton">
-            <form action="/salvar_funcionario">
+        <div class="drop_down espacamento">
+            <button class="btn btn_c tamanho" onclick="drop_down2()" ondblclick="drop_up2()" type="button">
+                Funcionário
+            </button>
+            <form action="/salvar_funcionario" class="form_dd2">
                 <div class="form-group">
                     <label for="">ID Pessoal</label>
                     <input type="text" class="form-control" name="id-pessoal" id="">
@@ -63,48 +67,56 @@
                     <input type="text" class="form-control" name="cargo" id="">
                     <label for="">Salário</label>
                     <input type="text" class="form-control" name="salario" id="">
-                    <button type="submit" class="btn btn-lg btn-primary btn-block">Cadastrar</button>
+                    <button type="submit" class="btn btn-lg btn-success btn-block mt-3">Cadastrar</button>
                 </div>
             </form>
         </div>
-    </div>
 
-    <div class="dropdown espacamento">
-        <button class="btn btn-secondary dropdown-toggle tamanho" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Linguagem
-        </button>
-        <div class="dropdown-menu tamanho" aria-labelledby="dropdownMenuButton">
-            <form action="/salvar_linguagem">
+        <div class="drop_down espacamento">
+            <button class="btn btn_c tamanho" onclick="drop_down3()" ondblclick="drop_up3()" type="button">
+                Linguagem
+            </button>
+            <form action="/salvar_linguagem" class="form_dd3">
                 <div class="form-group">
-                    <label for="">Linguagem</label>
+                    <label for="">Nome da linguagem</label>
                     <input type="text" class="form-control" name="linguagem" id="">
-                    <button type="submit" class="btn btn-lg btn-primary btn-block">Cadastrar</button>
+                    <button type="submit" class="btn btn-lg btn-success btn-block mt-3">Cadastrar</button>
                 </div>
             </form>
         </div>
-    </div>
 
-    <div class="dropdown espacamento">
-        <button class="btn btn-secondary dropdown-toggle tamanho" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Equipe
-        </button>
-        <div class="dropdown-menu tamanho" aria-labelledby="dropdownMenuButton">
-            <form action="/salvar_equipe">
+        <div class="drop_down espacamento">
+            <button class="btn btn_c tamanho" onclick="drop_down4()" ondblclick="drop_up4()" type="button">
+                Equipe
+            </button>
+            <form action="/salvar_equipe" class="form_dd4">
                 <div class="form-group">
-                    <label for="">Equipe</label>
-                    <input type="text" class="form-control" name="funcionario1" id="" placeholder="ID pessoa">
-                    <input type="text" class="form-control" name="funcionario2" id="" placeholder="ID pessoa">
-                    <input type="text" class="form-control" name="funcionario3" id="" placeholder="ID pessoa">
-                    <input type="text" class="form-control" name="funcionario4" id="" placeholder="ID pessoa">
-                    <button type="submit" class="btn btn-lg btn-primary btn-block">Cadastrar</button>
+                    <label for="id_funcionario1">ID Funcionário 1</label><br>
+                    <input type="text" class="form-control" name="funcionario1" id="id_funcionario1">
+                    <label for="id_funcionario2">ID Funcionário 2</label><br>
+                    <input type="text" class="form-control" name="funcionario2" id="id_funcionario2">
+                    <label for="id_funcionario3">ID Funcionário 3</label><br>
+                    <input type="text" class="form-control" name="funcionario3" id="id_funcionario3">
+                    <label for="id_funcionario4">ID Funcionário 4</label><br>
+                    <input type="text" class="form-control" name="funcionario4" id="id_funcionario4">
+                    <button type="submit" class="btn btn-lg btn-success btn-block mt-3">Cadastrar</button>
                 </div>
             </form>
         </div>
+
     </div>
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="../static/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -17,7 +17,7 @@ class Equipe_db(Equipe):
     def editar_db(self, equipe):
 
         self.cursor.execute(f"Update Equipes Set Pessoa_1 = {equipe['Id_1']}, Pessoa_2 = {equipe['Id_2']},"
-                            f" Pessoa_3 = {equipe['Id_3']}, Pessoa_4 = {equipe['Id_4']}")
+                            f" Pessoa_3 = {equipe['Id_3']}, Pessoa_4 = {equipe['Id_4']} where Id = {equipe['Id_equipe']}")
 
         self.conexao.commit()
 
